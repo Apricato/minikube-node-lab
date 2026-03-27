@@ -38,5 +38,6 @@ jobs:
         
     - name: Test service URLs
       run: |
+          kubectl rollout status deployment/nodejs-app --timeout=60s
           minikube service list
           minikube service nodejs-app --url
